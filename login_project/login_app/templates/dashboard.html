@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+{% if request.user.is_authenticated %}
+<h1>Bienvenido!! {{request.user.name}} </h1>
+<h5>Bienvenido Usuario</h5>
+<table class="table">
+    <h6 class="text-muted">Usuarios Activos</h6>
+    <thead>
+        <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in active_users %}
+            <tr>
+                <th>{{user.user}}</th>
+                <th>{{user.name}}</th>
+                <th>{{user.last_name}}</th>
+                <th>{{user.email}}</th>
+                <th>{{user.phone}}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="">
+<button type="button" name="button"><a href="{% url 'logout' %}">Logout</a></button>
+</div>
+{% else %}
+<h1>Acceso denegado</h1>
+<button type="button" name="button"><a href="{% url 'login' %}">Login</a></button>
+
+
+{%endif%}
+  </body>
+</html>

@@ -1,0 +1,5 @@
+django==5.1
+pymysql==1.1.1
+django-phonenumber-field[phonenumbers]
+django-environ
+cryptography
