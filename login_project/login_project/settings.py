@@ -82,11 +82,10 @@ WSGI_APPLICATION = 'login_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_NAME'),
-        'USER':env('DATABASE_USER'),
-        'PASSWORD':env('DATABASE_PASS'),
-        'HOST':env('DATABASE_HOST'),
-        'PORT':env('DATABASE_PORT'),
+        'NAME': 'Brentkon$logintest',
+        'USER':'Brentkon',
+        'PASSWORD':'Bren5618#1',
+        'HOST':'Brentkon.mysql.pythonanywhere-services.com',
     }
 }
 
